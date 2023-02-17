@@ -1,0 +1,44 @@
+* {
+  /* margin: 0; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  min-width: 400px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #157efb;
+  margin-bottom: 15px;
+}
+
+button {
+  background: #157efb;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border: 2px solid #157efb;
+  cursor: pointer;
+}
+#delete-btn {
+  background: #fff;
+  color: #157efb;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-block: 0.3rem;
+}
+
+a {
+  color: #157efb;
+}
