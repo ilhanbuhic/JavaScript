@@ -56,3 +56,41 @@ const {
 console.log(restaurantName, hours, tags)
 // We still need to reference the property names like we did before, otherwise JavaScript has no way of knowing what we want
 // We usually use this way when we are dealing with the third-party data like APIs
+
+
+// Default values:
+// Another useful feature for when we're dealing with third-party data, like an object that we get from somewhere else like an API call
+// It can be very useful to have the default values for the case that we're trying to read a property that does not exist on the object
+// Usually we would get the 'undefined'
+// restaurant.menu // This would be 'undefined', because there is no property called 'menu'
+// So we can set the default values, just like we can do it with arrays
+// We can combine this feature by giving them another name instead of using the property name and give them default values
+const {
+  menu = [],
+  starterMenu: starters = [
+    /*default value: none*/
+  ],
+} = restaurant
+// const menu = restaurant.menu || []
+// 'starterMenu' does exist, therefore the default value will not apply, but it will apply to 'menu',
+// because there is no property in the 'restaurant' object called 'menu'
+console.log(menu, starters)
+
+// Mutating variables:
+let a = 111
+let b = 999
+// let obj = {};
+const obj = { a: 23, b: 7, c: 14 }
+
+// {a, b} = obj
+// This is not possible, because when we start a line witha  curly brace, then JavaScript expects a codeblock,
+// and because we can't assign anything to a codeblock
+// To solve this, we need to wrap everything into parentheses
+;({ a, b } = obj)
+console.log(a, b)
+
+// Nested destructuring of object
+const {
+  fri: { open: o, close: c },
+} = openingHours
+console.log(/*open, close*/ o, c)
