@@ -41,3 +41,30 @@ console.log(firstA, secondA)
 // Using destructing / ..... NEW WAY .....
 // [first, second] = [second, first]
 console.log(first, second)
+
+// We can have a function return an array and then we can restruct the result to different variables
+// This allows us to return multiple variables from a function
+// Write a function to order food
+console.log(restaurant.order(2, 0))
+
+// Receiving 2 return values from a function
+const [starter, main] = restaurant.order(2, 0)
+console.log(starter, main)
+
+// We are trying to return 2 from the first array and an entire second array
+// Nested destructuring
+const nested = [2, 4, [5, 6]]
+// const [i, , j] = nested
+// console.log(i, j)
+
+// We are trying to return individually 2, 5, 6
+const [i, , [j, g]] = nested
+console.log(i, j, g)
+
+// We can also set default values for variables when we are extracting them
+// That's very useful when we don't know the lengh of the array
+// If we have an array that is shorter than we think, we might try to unpack the array in the positions that don't even exist
+// Default values:
+const [p = 1, q = 1, r = 1] = [8, 9]
+console.log(p, q, r)
+// We get undefined, because we only have elements at position 0 and 1, so we can set default values
