@@ -54,3 +54,35 @@ console.log(arr)
 // REST, because on LEFT side of =
 const [a, b, ...others] = [1, 2, 3, 4, 5]
 console.log(a, b, others)
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+]
+console.log(pizza, risotto, otherFood)
+// We get 'pizza', 'risotto' and other elements that we didn't select previously. REST syntax collects all the array elements after the last variable
+// In this case that was 'risotto'. It does not include any skipped elements, but only the rest of the elements
+
+// Objects
+// We are going to collect only 'Saturday' and then the rest should go into a new object which are the week days
+const { sat, ...weekdays } = restaurant.openingHours
+console.log(weekdays)
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i]
+  }
+  console.log(sum)
+}
+add(2, 3)
+add(2, 3, 4, 9)
+add(6, 1, 9, 5, 2, 3)
+
+// orderPizza function
+restaurant.orderPizza("Mushrooms", "Ham", "Cheese")
+
+// SPEAD VS REST
+// REST operator serves to collect all of the remaining, 'unused' parameters.
+// SPREAD operator unpacks an array and converts it to a list items of that array
