@@ -66,3 +66,23 @@ restaurant.numGuests = 23
 const guests2 = restaurant.numGuests || 10
 console.log(guests2)
 // JavaScript is going to take 23, because it's already defined, which means it's a truthy value
+
+console.log('------ AND ------')
+// AND operator works exactly the opposite of OR operator
+// Using AND operator, JavaScript is going to pick the first value that is falsy
+// It returns the first falsy value, without even evaluating the second operant
+ console.log(0 && 'Ilhan')
+ console.log('Hello' && 23 && null && 'Ilhan')
+
+// To check whether if restaurant.orderPizza exists, if does, use the parameters
+// 1st way to check this
+ if (restaurant.orderPizza) {
+   restaurant.orderPizza('mushroom', 'ham', 'cheese')
+ }
+
+// 2nd way to check this
+// If restaurant.orderPizza doesn't exist, undefined, it will short-curcit evaluation and nothing will happen, which is the same as using IF operator
+// If it does exist, if it's a truthy value, then the second part will be evaluated
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'ham', 'cheese')
+
+
