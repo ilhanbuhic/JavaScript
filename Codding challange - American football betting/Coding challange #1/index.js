@@ -88,4 +88,16 @@ console.log(`// 5.`)
 const {
   odds: { team1, x: draw, team2 },
 } = game
-console.log(team1, draw, team2)
+console.log(team1, draw, team2) / 6
+console.log(`// 6.`)
+function printGoals(...players) {
+  for (let i = 0; i < players.length; i++) {
+    console.log(`${players[i]} scored a goal`)
+  }
+  console.log(`${players.length} goals were scored`)
+}
+printGoals(...game.scored)
+
+// 7.
+console.log(`// 7.`)
+team1 < team2 && console.log(`Team 1 is more likely to win`)
