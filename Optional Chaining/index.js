@@ -96,19 +96,44 @@ console.log(restaurant.openingHours.mon?.open)
 console.log(restaurant.openingHours?.mon?.open)
 // If 'openinHours' doesn't exist, it will not even try to find 'openingHours.mon. The same 'openingHours.mon.open'
 
-
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+]
 for (const day of days) {
   // console.log(day)
-  const open = restaurant.openingHours[day]?.open ?? 'closed'
+  const open = restaurant.openingHours[day]?.open ?? "closed"
   console.log(`On ${day} we open at ${open}`)
 }
 
 // Methods
 // We can check if method actually exists before we call it
 console.log(`\n---- METHODS ----`)
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist')
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist')
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist")
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist")
 // We are checking if 'restaurant.order' exists. If it does exist, we can call it
 // We should always use nullish coalescing operator
 
+// Arrays
+// Optional Chaining even works on arrays
+console.log(`\n---- ARRAYS ----`)
+const users = [
+  {
+    name: "ilhan",
+    email: `ilhanbuhic@hotmail.com`,
+  },
+]
+// We want to get the first element of 'users' array
+console.log(users[0]?.name ?? `User array empty`)
+
+// If we couldn't use Optional Chaining, we would have to write like this:
+if (users.length > 0) {
+  console.log(users[0].name)
+} else {
+  console.log(`User array empty`)
+}
