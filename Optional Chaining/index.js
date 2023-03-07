@@ -83,3 +83,32 @@ if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open)
 }
 // This can make a huge mess when we have deeply nested objects with lots of optional properties
+
+// ES2020 introduced 'Optional Chaining'
+// With Optional Chaining, if a certain property doesn't exist, then 'undefined' is returned immediately
+
+// With 'Optional Chaining'
+console.log(restaurant.openingHours.mon?.open)
+// Only if the property that is before this '?', so ONLY if 'monday' exists, then this 'open' property will be read from there, otherwise 'undefined' is returned
+// The property exists if it's not 'null' or 'undefined'. If it's 0 or an empty string it still exists
+
+// We can have multiple Optinal Chainings
+console.log(restaurant.openingHours?.mon?.open)
+// If 'openinHours' doesn't exist, it will not even try to find 'openingHours.mon. The same 'openingHours.mon.open'
+
+
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+for (const day of days) {
+  // console.log(day)
+  const open = restaurant.openingHours[day]?.open ?? 'closed'
+  console.log(`On ${day} we open at ${open}`)
+}
+
+// Methods
+// We can check if method actually exists before we call it
+console.log(`\n---- METHODS ----`)
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist')
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist')
+// We are checking if 'restaurant.order' exists. If it does exist, we can call it
+// We should always use nullish coalescing operator
+
