@@ -45,3 +45,33 @@ const restaurant = {
 // Looping over Property NAMES/KEYS
 console.log(`\n---- Property NAMES ----`)
 for (const day of Object.keys(restaurant.openingHours)) console.log(day)
+
+// We can get the length of the 'openingHours' days because when we loop over that object, it's being showed in the form of array
+// Therefore, we can loop through arrays and even get the length of it
+const properties = Object.keys(restaurant.openingHours)
+console.log(properties.length)
+
+let openStr = `We are open on ${properties.length} days: `
+
+for (const day of properties) {
+  openStr += `${day}, `
+}
+console.log(openStr)
+
+// Property VALUES
+console.log(`\n---- Property VALUES ----`)
+const values = Object.values(restaurant.openingHours)
+console.log(values)
+
+// In order to loop through an entire object, we need the entries
+// Entries are keys + values together
+// Entire object
+console.log(`\n---- KEY, VALUES / ENTRIES ----`)
+const entries = Object.entries(restaurant.openingHours)
+
+const key = Object.keys(restaurant.openingHours)
+const open = Object.values(restaurant.openingHours)
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`)
+}
