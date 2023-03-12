@@ -25,3 +25,28 @@ console.log(new Set("Ilhan"))
 console.log(ordersSet.size)
 // This could be useful if the Chief wanted to know how many different meals are going to be cooked
 
+// We can check if certain element is in a SET
+console.log(ordersSet.has("Pizza"))
+console.log(ordersSet.has("Bread"))
+
+// We can add a new element to a SET
+ordersSet.add("Bread")
+console.log(ordersSet)
+
+// We can also delete elements
+ordersSet.delete("Bread")
+console.log(ordersSet)
+
+// We can't retrieve values out of a SET. We can't use index like in arrays
+console.log(ordersSet[0]) // This will return 'undefined'
+
+// There is no way of getting values of a SET. There is no need for getting data of a SET
+// That's because if all values are unique and their order doesn't matter, then there is no point of retrieving values out of a SET
+// All we need to know is that if a certain value is in the SET or not and that's why we have '.has' method
+// If our goal is to actually store values in order and then retrieve it, then the best use case is to just use and array
+
+// We can use this method to delete all the elements from a SET
+// ordersSet.clear()
+// console.log(ordersSet)
+
+
