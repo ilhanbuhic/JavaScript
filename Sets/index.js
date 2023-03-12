@@ -49,4 +49,28 @@ console.log(ordersSet[0]) // This will return 'undefined'
 // ordersSet.clear()
 // console.log(ordersSet)
 
+// Looping through a SET
+for (const orders of ordersSet) {
+  console.log(orders)
+}
 
+// In the normal code base, the normal use case is to remove duplicate values of arrays
+// We have an array in restaurant which contains the staff of our restaurant
+// Example:
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]
+// Now we want to know which different positions are available in the restaurant - having a new unique array of this 'staff' array
+const staffUnique = new Set(staff)
+console.log(staffUnique)
+// Now we want for 'staffUnique' to be an array
+// Conversation from SETS to ARRAYS is easy, because they're both iterables
+// Spread operators works on all iterables, which includes SETS
+const arrStaffUnique = [...staffUnique]
+console.log(arrStaffUnique)
+// We want to check the SET size of 'staff'
+console.log(staffUnique.size)
+// We want to check how many different letters are there in my name
+console.log(new Set("ilhanbuhic").size)
+
+// SETS are not intended to deplace arrays at all
+// Whenever we need to store values in order and might contain duplicates - we should use arrays
+// We should also use arrays when we need to manipulate data, because arrays have access to many different array methods
