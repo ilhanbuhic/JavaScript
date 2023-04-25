@@ -28,3 +28,60 @@ rest
   .set(false, "We are closed")
 console.log(rest)
 // Calling the .set method returns the updated MAP, so all of this is an updated MAP and we can call .set again on that MAP
+
+// In order to read data from the MAP, we use the '.get' method. We only need to pass in the name of the KEY (return 'undefined')
+console.log("\n---- READING DATA / .get ----")
+console.log(rest.get("name"))
+console.log(rest.get(true))
+// The data type of the key matters
+// This wouldn't work:
+console.log(rest.get("true"))
+console.log(rest.get("1"))
+
+// Making a program
+console.log(`\n---- PROGRAM ----`)
+const time = 21
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")))
+// We are asking if the current time is between 23 and 11. Which is true/false value
+// The result of this operation will be either true of false
+
+// We can check if the MAP contains a certain KEY
+console.log(`\n`)
+console.log(rest.has("categories"))
+// We can also delete elements from the MAP, which is based on KEY
+// We want to close the second location of the restaurant
+rest.delete(2)
+console.log(rest)
+
+// Maps also have the size property
+console.log(rest.size)
+
+// There is some overlap in the way that we work with MAPS and SETS, because they were both introduced in ES6
+
+// We can use arrays or objects as MAP keys
+// Array as a MAP key:
+rest.set([1, 2], "Test")
+console.log(rest)
+
+// We can also get the data based on that array
+console.log(`\n- RETRIEVING DATA BASED ON ARRAY-`)
+rest.get([1, 2]) // This will not retrieve data
+console.log(rest.get([1, 2]))
+// This is because these 2 arrays are not the same object:
+// 1. rest.set([1, 2], 'Test')
+// 2. rest.get([1, 2])
+// Even though we wrote the in the same way and they have the same elements, they are not the same object in the Heep
+// In order to make it works, we have to do this
+const arr = [1, 2]
+rest.set(arr, "Test")
+console.log(rest.get(arr))
+
+// Object as a MAP key:
+// This can be very useful with DOM elements, that are just special type of object
+console.log(`\n- RETRIEVING DATA BASED ON OBJECT-`)
+rest.set(document.querySelector("h1"), "Heading")
+console.log(rest)
+
+// We can also clear/remove all the elements from the MAP
+// rest.clear()
+// console.log(rest)
