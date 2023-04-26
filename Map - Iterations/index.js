@@ -47,3 +47,28 @@ console.log(`\n---- LOOPING THROUGH MAPS----`)
 // for (let i = 0; i < Object.entries(openingHours).length; i++) {
 //     console.log(Object.entries(openingHours)[[i]])
 // }
+
+// We can also check the KEYS and VALUES of MAPS, just like with Objects
+console.log(`\n--KEYS, VALUES, ENTRIES IN MAPS--`)
+console.log(question.keys())
+console.log(question.values())
+console.log(question.entries())
+
+// Quiz app:
+console.log(`\n----QUIZ APP----`)
+console.log(question.get("question"))
+for (const [key, value] of question) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`)
+  }
+}
+
+const answer = Number(prompt(`Your answer:`))
+/* 1st way:*/ //answer === 3 ? console.log(question.get(true)) : console.log(question.get(false))
+/* 2nd way:*/ console.log(question.get(answer === question.get("correct")))
+
+// For OBJECTS to iterate through them, we need Object.entries, because an object itself is not an iterable
+// This won't work
+// for (const iterate of openingHours) {
+//     console.log(iterate)
+// }
