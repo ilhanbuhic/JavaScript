@@ -39,3 +39,26 @@ console.log(airline.slice(4, 7)) // The end value (SPACE in this case) is not in
 console.log(airline.slice(0, airline.indexOf(" ")))
 // Extracting the strings of the first word from 'airplane' variable, without knowing any of the indexes
 console.log(airline.slice(airline.lastIndexOf(" ") + 1))
+
+// We can define a negative begin argument
+console.log(airline.slice(-2)) // This will start extracting from the end
+console.log(airline.slice(1, -1)) // We started at position 1 and the negative parameter cuts off the last letter
+
+// Write a function that receives an airplane seat and logs to the console whether if it's a middle seat or not
+console.log("\n----AIRPLANE SEAT----")
+const checkMiddleSeat = (seat) => {
+  const s = seat.slice(-1)
+  s === "E" || s === "B"
+    ? console.log("Middle seat")
+    : console.log("Not a middle seat")
+}
+checkMiddleSeat("11B")
+
+// Why does all of this works? We know that strings are primitive values, so why do they have methods?
+// Because we know that methods are only available in objects, such as arrays
+// Whenever we call a method on a string, JavaScript will automatically, behinds the scenes, convert a string primitive to a string object with the same content
+// And then, it's on that object where the methods are called. This process is called Boxing, because it takes our string and puts it into a box which is the object
+// What happens is this:
+console.log(new String("Ilhan"))
+console.log(typeof new String("Ilhan"))
+// Whenever we call a method on a string, JavaScript converts an array into an object. When the operation is done, the object is converted back into a regular string primitive
