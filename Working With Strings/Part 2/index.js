@@ -92,3 +92,34 @@ const checkBaggage = (items) => {
     console.log(`Your baggage is allowed to be checked-in`)
   }
 }
+
+console.log(`\n---- Exercise 2(with FOR loop) ----`)
+// This could've been done a lot simpler, but I like to complicate it sometimes
+// const checkBaggage = (items) => {
+//   let notAllowedGun = false
+//   let notAllowedKnife = false
+//   const a = items.toLowerCase().split(" ")
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] === "knife") {
+//       notAllowedKnife = true
+//       // console.log(`Your baggage is not allowed to check-in`)
+//     } else if (a[i] === "gun") {
+//       notAllowedGun = true
+//       // console.log(`Your baggage is not allowed to check-in`)
+//     }
+//   }
+//   if (notAllowedGun && notAllowedKnife) {
+//     console.log("We found a gun and a knife")
+//   } else if (notAllowedGun) {
+//     console.log("We found a gun")
+//   } else if (notAllowedKnife) {
+//     console.log("We found a knife")
+//   } else {
+//     console.log("Welcome!")
+//   }
+//   Returning these variables to default values, otherwise it would interfere whenever we call the function next time
+//   That's because once the variables in the function change, they stay the way they were changed
+// }
+checkBaggage("I have a laptop, some food and a pocket Knife")
+checkBaggage("Socks and camera")
+checkBaggage("Got some snacks and gun for a protection")
