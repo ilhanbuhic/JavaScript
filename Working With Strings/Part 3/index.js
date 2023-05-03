@@ -29,3 +29,61 @@ console.log(newName)
 // console.log("nesto bla".split(" "))
 // capitalizeName("jessica ann smith davis")
 // capitalizeName("ilhan buhic")
+
+// 2nd way
+const capitalizeName = (name) => {
+  const names = name.split(" ")
+  let namesUpper = []
+  for (const n of names) {
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+  }
+  console.log(namesUpper.join(" "))
+}
+capitalizeName("ilhan buhic")
+
+// Padding
+// Padding a string means to add the number of characters to the string, until that string has a certain, desired length
+// padStart() will add characters to the begining of the string*/
+const message = "Go to gate 23!"
+console.log(message.padStart(20, "-").padEnd(25, "-"))
+
+// Program that will implement masking of credit cards
+// 1st way
+console.log(`\n---- Mask Credit Card ----`)
+// const maskCreditCard = (number) => {
+//   const str = number + ''
+//   const last = str.slice(-4)
+//   let masked = ''
+//   console.log(masked = last.padStart(str.length, 'X'))
+// }
+
+// 2nd way
+const maskCreditCard = (number) => {
+  let complete = ""
+  //converting a number into a string
+  const str = number + ""
+  // the result of this will be a number, but as a string
+  // this works because if one of the operands of + sign is the string, it will convert all the operands into string
+  const last = str.slice(-4)
+  const masked = last.padStart(str.length, "X")
+  const splitted = masked.split("")
+  for (let i = 0; i < splitted.length; i++) {
+    complete += splitted[i]
+    if ((i + 1) % 4 === 0 && i !== splitted.length - 1) {
+      complete += "-"
+    }
+  }
+  return complete
+}
+console.log("Credit Card: ", maskCreditCard(8328923098522074))
+
+// Repeat() method
+console.log(`\n---- Repeat() method`)
+// This method allows us to repeat the same string multiple times
+const message2 = "Bad weather... All flights delayed"
+console.log(message2.repeat(5))
+
+const planeInLine = (plane) => {
+  console.log(`There are ${plane} planes in line ${"✈️".repeat(plane)}.\n`)
+}
+planeInLine(`5`)
