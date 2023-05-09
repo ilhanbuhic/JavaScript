@@ -14,5 +14,3 @@
 // First-class vs higher-order function
 // First-class function is just a feature that a programming language has or doesn't have, all it means is that all functions are values. It's just a concept
 // There are higher-order functions in practice which are possible because the language supports first-class functions
-
-// git test
