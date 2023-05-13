@@ -53,3 +53,27 @@ There are 3 function methods to do that they are .call, .apply and .bind
 
 // We know that functions are objects and objects have methods, therefore functions can have methods too
 // In the .call method the first argument is what we want the .this keyword to point to, the others are rest of the arguments
+
+// .call method
+book.call(eurowings, 23, "Amir Mustafic")
+console.log(eurowings)
+
+const swiss = {
+  airline: "Swiss Airline",
+  iataCode: "LX",
+  bookings: [],
+}
+book.call(swiss, 583, "Mary Cooper")
+console.log(swiss)
+
+// .apply method
+/* Apply method basically does exactly the same thing
+The only difference is that the .apply does not receive list of arguments after the .this keyword,
+but instead it's gonna take an array of the arguments and that's the only way how it's going to work
+It will take the elements from that array and pass it into the function */
+const flightData = [583, "George Cooper"]
+book.apply(swiss, flightData)
+console.log(swiss)
+/* This .apply method is not that used anymore in modern JavaScript, because there's a better way of doing the exact same thing,
+because we can do exactly the same thing with .call method */
+book.call(swiss, ...flightData)
