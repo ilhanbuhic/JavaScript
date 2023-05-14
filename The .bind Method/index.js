@@ -116,3 +116,51 @@ bookEW23("Ramela Hadzic")
 
 // There are also other situations where we can use the .bind method
 // We can also use the .bind method when we use objects together with event listeners
+
+// With Event Listeners:
+// lufthansa.planes = 300
+// lufthansa.buyPlane = () => {
+//   //.buyPlane is a method / function is 'anonymous'
+//   console.log(this)
+
+//   this.planes++
+//   console.log(this.planes)
+// }
+// document
+//   .querySelector(".buy")
+//   .addEventListener("click", lufthansa.buyPlane.bind(lufthansa))
+/* This will return NaN and returns the button element. That's because the .this keyword is the button element.
+That's because event handler function the .this keyword always points to the element on which that handler is attached to
+The button itself became the .this keyword
+We cannot use the ARROW function on .this keyword, because in that case the .this keyword keyword will always point to globalThis */
+
+// We need to manually define the .this keyword to lufthansa.buyPlane
+// We need to pass in a function into lufthansa.buyPlane and not to call it
+// .call method will call the function, therefore we need to use .bind method so we can return a new function
+
+// Partical application:
+// This is a general function for adding tax
+const addTax = (rate, value) => value + value * rate
+console.log(addTax(0.1, 200))
+
+// We want to create one tax that we use all the time:
+const addVAT = addTax.bind(null, 0.23)
+// This would be the same as writing /: addVat = value => value + value * 0.23
+console.log(addVAT(100))
+console.log(addVAT(23))
+
+// Challange:
+console.log("----- Challange -----")
+// Making the exact example as above, using a callback function
+
+const callBackAddTaxRate = (rate) => {
+  return function (value) {
+    return value + value * 0.23
+  }
+}
+// 1.
+const addVAT2 = callBackAddTaxRate()
+console.log(addVAT2(100))
+console.log(addVAT2(23))
+// 2.
+// console.log(callBackAddTaxRate(100))
