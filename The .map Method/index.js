@@ -48,3 +48,21 @@ console.log(movementsUSDfor)
 //     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`
 //   }
 // })
+
+// Using TERNARY operator
+const movementDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
+      mov
+    )}`
+)
+
+console.log(movementDescriptions)
+
+// There is a big difference looping through an array using .forEach() and using .map() method
+// Using .forEach() we printed each line individually to the console, as we were looping over the array,
+// so in each of the iterations, we performed some action that was then visible in the console and that's a side effect
+// .forEach() method creates a side effects
+// Using .map() method, all we did was to return each of the strings from the callback
+// Basically they got added into a new array and logged that entire array to the console and not the elements one by one
+// With .map() we do not create side effect in each of the iteration
