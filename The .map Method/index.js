@@ -25,3 +25,26 @@ console.log(movementsUSD)
 console.log(`----- ARROW FUNCTION -----`)
 const movementsUSDArrowFunc = movements.map((mov) => mov * eurToUsd)
 console.log(movementsUSDArrowFunc)
+
+// Same example using FOR OF:
+console.log(`----- FOR OF -----`)
+const movementsUSDfor = []
+
+for (const mov of movements) {
+  movementsUSDfor.push(mov * eurToUsd)
+}
+console.log(movementsUSDfor)
+
+// Just like .forEach() method, the .map() method also has access to the exact same 3 parameters
+// 1. Current array element 2. Current index 3. Entire array
+
+// Using IF statement
+// const movementDescriptions = movements.map((mov, i, arr) => {
+//   if (mov > 0) {
+//     // We don't want to console.log these values (line: 45/47), we want to return it
+//     // That will place these values (line: 45/47) into the new array
+//     return `Movement ${i + 1}: You deposited ${mov}`
+//   } else {
+//     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`
+//   }
+// })
