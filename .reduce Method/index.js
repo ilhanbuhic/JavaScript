@@ -29,3 +29,26 @@ const balance = movements.reduce(
   //if we put '0', it will mean that we will start counting/adding from index '0'
   0
 )
+
+// Writing the code from above in more simple way:
+const balance2 = movements.reduce((acc, cur) => acc + cur, 0)
+
+// Same example using .forOf()
+for (const mov of movements) {
+  let sum = 0
+  sum += movements
+  console.log(sum)
+}
+
+console.log(`----- MAXIMUM -----`)
+// Getting a maximum value of the movements array
+const maximum = movements.reduce(function (acc, cur) {
+  //we will use movements[0] as the initial value
+  //it would be a mistake to use '0' as the initial value, because there may be a chance that the first value in the array is a negative value
+  // we should put '0' when trying to find maximum or a minimum value, instead just go witht the first value of the array
+  // return acc > cur // this code will return TRUE or FALSE by giving a maximum value
+  if (acc > cur) {
+    return acc
+  } else return cur
+}, movements[0])
+console.log(`Maximum: ${maximum}`)
