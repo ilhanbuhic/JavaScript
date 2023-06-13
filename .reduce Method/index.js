@@ -36,7 +36,7 @@ const balance2 = movements.reduce((acc, cur) => acc + cur, 0)
 // Same example using .forOf()
 for (const mov of movements) {
   let sum = 0
-  sum += movements
+  sum += mov
   console.log(sum)
 }
 
