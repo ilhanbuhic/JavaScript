@@ -25,26 +25,46 @@
 // 2. ----------------------------------------------------------------
 // Callback function practice
 
-let a = 1
-let b = 2
+// let a = 1
+// let b = 2
 
-const calculate = function () {
-  if (a < b) {
-    return true
-  } else return false
-}
+// const calculate = function () {
+//   if (a < b) {
+//     return true
+//   } else return false
+// }
 
-const callback = function (calculate) {
-  return calculate
-}
-callback(calculate)
+// const callback = function (calculate) {
+//   return calculate
+// }
+// callback(calculate)
 
-const checking = function (callback) {
-  if (callback() === true) {
-    console.log("True")
-  } else console.log("False")
-}
+// const checking = function (callback) {
+//   if (callback() === true) {
+//     console.log("True")
+//   } else console.log("False")
+// }
 
-checking(callback(calculate))
-console.log(calculate())
+// checking(callback(calculate))
+// console.log(calculate())
 // 2. ----------------------------------------------------------------
+
+// 3. ----------------------------------------------------------------
+// Callback function practice
+
+let firstName = "Ilhan"
+let lastName = "Buhic"
+
+const displayFirstLastName = function (firstName, lastName) {
+  console.log(firstName, lastName)
+}
+
+const errorFunction = () => console.log("Error")
+
+const displayTest = function (firstName, lastName, callback1, callback2) {
+  if (firstName === "Ilhan" && lastName === "Buhic")
+    callback1(firstName, lastName)
+  else callback2()
+}
+displayTest(firstName, lastName, displayFirstLastName, errorFunction)
+// 3. ----------------------------------------------------------------
