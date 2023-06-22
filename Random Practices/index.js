@@ -52,19 +52,39 @@
 // 3. ----------------------------------------------------------------
 // Callback function practice
 
-let firstName = "Ilhan"
-let lastName = "Buhic"
+// let firstName = "Ilhan"
+// let lastName = "Buhic"
 
-const displayFirstLastName = function (firstName, lastName) {
-  console.log(firstName, lastName)
-}
+// const displayFirstLastName = function (firstName, lastName) {
+//   console.log(firstName, lastName)
+// }
 
-const errorFunction = () => console.log("Error")
+// const errorFunction = () => console.log("Error")
 
-const displayTest = function (firstName, lastName, callback1, callback2) {
-  if (firstName === "Ilhan" && lastName === "Buhic")
-    callback1(firstName, lastName)
-  else callback2()
-}
-displayTest(firstName, lastName, displayFirstLastName, errorFunction)
+// const displayTest = function (firstName, lastName, callback1, callback2) {
+//   if (firstName === "Ilhan" && lastName === "Buhic")
+//     callback1(firstName, lastName)
+//   else callback2()
+// }
+// displayTest(firstName, lastName, displayFirstLastName, errorFunction)
 // 3. ----------------------------------------------------------------
+
+// 4. ----------------------------------------------------------------
+// If element is even, add it up with 2, if not subtract with 1
+// Mutate the original array
+// let arr = [1, 2, 3, 4, 5, 6]
+
+// arr.forEach((el, index) => {
+//   if (arr[index] % 2 === 0) arr[index] = el + 2
+//   else {
+//     arr[index] = el - 1
+//   }
+// })
+// console.log(arr)
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2 === 0) arr[i] + 2
+//   else arr[i] - 1
+// }
+// console.log(arr)
+// 4. ----------------------------------------------------------------
