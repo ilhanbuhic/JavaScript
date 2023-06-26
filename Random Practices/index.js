@@ -146,4 +146,25 @@
 //     lastNamesOnly.push(fullArr[i])
 //   }
 // }
-// 7. ---------------------------------------------------------------
+// 7. ----------------------------------------------------------------
+
+// Take the 2 biggest numbers from arrays in the array and subtract them with 20
+
+const arr = [
+  [100, 23, 240, 45],
+  [23, 2315, 151, 232],
+  [232, 121, 50],
+]
+
+const newArr = []
+
+for (let i = 0; i < arr.length; i++) {
+  newArr.push(arr[i].sort((a, b) => b - a))
+}
+
+for (let i = 0; i < newArr.length; i++) {
+  for (let j = 0; j < 2; j++) {
+    newArr[i][j] = newArr[i][j] - 20
+  }
+}
+console.log(newArr)
