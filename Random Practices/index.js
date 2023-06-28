@@ -168,3 +168,4 @@ for (let i = 0; i < newArr.length; i++) {
   }
 }
 console.log(newArr)
+
