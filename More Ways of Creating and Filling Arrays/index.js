@@ -67,3 +67,24 @@ console.log(arr100)
 // It's not a real array and it doesn't have methods like .map(), .reduce() and it doesn't have most of the array methods
 // If we wanted to use a real array method like that on a NodeList
 // we would first need to convert the NodeList to an array and we can use Array.from() for that
+
+// Let's say that we do not have some array, but we have some values in the UI,
+// but we want to calculate the sum of these values, from the UI, without having an array of those values that are in the UI
+// We would first need to somehow get those values from the UI and then do the calculation based on that
+
+const valuesUI = Array.from(document.querySelectorAll(".someValue"))
+// Now we could use this array and the array methods after we converted the NodeList into an array
+valuesUI.map((el) => el.textContent.replace("€", ""))
+
+// We can also use the second argument of the Array.from() method, which is the mapping callback
+// We can do this all at once, using the callback as the argument, instead of doing it separately like in (line: 76/78)
+const valueUI1 = Array.from(
+  document
+    .querySelectorAll("someValue")
+    .map((el) => el.textContent.replace("€", ""))
+)
+
+// There is also another way to convert .querySelectorAll() to an array,
+// by spreading the result of this .querySelectorAll() into a new array
+const valueUI2 = [...document.querySelectorAll("someValue")]
+// But then, we would have to do the mapping separately
