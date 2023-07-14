@@ -68,3 +68,39 @@ const { deposits, withdrawals } = accounts
     { deposits: 0, withdrawals: 0 }
   )
 console.log(deposits, withdrawals)
+
+// Getting a maximum value of the movements array by creating an array
+const maximum = accounts
+  .flatMap((mov) => mov.movements)
+  .reduce(
+    (sums, cur) => {
+      // cur > 0 ? sums[0] += cur : sums[1] += cur
+      sums[cur > 0 ? (sums[0] += cur) : (sums[1] += cur)]
+      return sums
+    },
+    [0, 0]
+  )
+console.log(maximum[0], maximum[1])
+
+// Practice #4:
+// We want to create a simple function to convert any string to a title case
+// Title case - all the words in a sentence are capitalized, except for some of them
+// this is a nice title - This Is a Nice Title
+const convertTitleCase = function (title) {
+  const capitalize = (str) => str[0].toUpperCase() + str.slice(1)
+  const exceptions = ["a", "an", "and", "the", "but", "or", "on", "in", "with"]
+
+  // const titleCase = title.toLowerCase().split(" ").map((words) => words !== exceptions ? words[0].toUpperCase() + words.slice(1) : words.toLowerCase()) // This doesn't work
+  const titleCase = title
+    .toLowerCase()
+    .split(" ")
+    .map((words) =>
+      exceptions.includes(words) ? words.toLowerCase() : capitalize(words)
+    )
+    .join(" ")
+  return capitalize(titleCase)
+}
+
+console.log(convertTitleCase("this is a nice title"))
+console.log(convertTitleCase("this is a LONG title but not too long"))
+console.log(convertTitleCase("and here is another title with an EXAMPLE"))
