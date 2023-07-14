@@ -40,3 +40,31 @@ const numDeposits1000 = accounts
   .flatMap((mov) => mov.movements)
   .reduce((count, mov) => (mov >= 1000 ? count + 1 : count), 0)
 console.log(numDeposits1000)
+
+// Practice #3:
+// Creating an object which contains the sum of the deposits and of the withdrawals
+// /* const sums*/ const {deposits, withdrawals} = accounts
+//   .flatMap((mov) => mov.movements)
+//   .reduce(
+//     (sums, curr) => {
+//       curr > 0 ? (sums.withdrawals += curr) : (sums.deposits += curr)
+//       return sums
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   )
+// console.log(deposits, withdrawals)
+// In an arrow function, the value is automatically returned when we don't have a function body
+// Because we have a function body in this example, we have to manually return the accumulator from the function
+// In the .reduce() method, we always have to return the accumulator from each iteration
+
+// Another way of doing -- Practice #3 --
+const { deposits, withdrawals } = accounts
+  .flatMap((mov) => mov.movements)
+  .reduce(
+    (sums, cur) => {
+      sums[cur > 0 ? "deposits" : "withdrawals"] += cur
+      return sums
+    },
+    { deposits: 0, withdrawals: 0 }
+  )
+console.log(deposits, withdrawals)
