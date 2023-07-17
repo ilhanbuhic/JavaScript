@@ -71,3 +71,46 @@ HINT: Some dogs have multiple owners, so you first need to find Sarah in the own
 //       )
 //     }
 //   }
+//   const ownersEatTooMuch = function () {
+//     if (curFood > dog.recommendedPortion) {
+//       // console.log(
+//       //   `${
+//       //     owners.length <= 1 ? owners : `${owners[0]} and ${owners[1]}`
+//       //   }'s dog is eating too much`
+//       // )
+//       ownersEatTooMuchArray.push(...owners)
+//     }
+//   }
+//   ownersEatTooMuch()
+
+//   const ownersEatTooLittle = function () {
+//     if (curFood < dog.recommendedPortion) {
+//       // console.log(
+//       //   `${
+//       //     owners.length <= 1 ? owners : `${owners[0]} and ${owners[1]}`
+//       //   }'s dog is eating too little`
+//       // )
+//       ownersEatTooLittleArray.push(...owners)
+//     }
+//   }
+//   ownersEatTooLittle()
+
+//   const dogsEatingExactlyRecommended = dogs.some(
+//     (dog) => dog.curFood === dog.recommendedPortion
+//   )
+//   const dogsEatingOkayAmount = dogs.some(
+//     (dog) => dog.curFood > dog.lowerRange && dog.curFood < dog.upperRange
+//   )
+//   dogsEatingOkayAmountArray.push(dogsEatingOkayAmount)
+// })
+// console.log(`${ownersEatTooMuchArray.join(" and ")}'s dogs eat too much`)
+// console.log(`${ownersEatTooLittleArray.join(" and ")}'s dogs eat too little`)
+// console.log(dogsEatingOkayAmountArray)
+
+// const dogsCopy = [...dogs].sort(function (a, b) {
+//   if (a.recommendedPortion > b.recommendedPortion) return 1
+//   if (a.recommendedPortion < b.recommendedPortion) return -1
+// })
+// // const dogsCopy = [...dogs].sort((a, b) => a.recommendedPortion - b.recommendedPortion) // This also works
+// // We can also use .slice() method without any arguments to copy the array, instead of [...dogs]
+// console.log(dogsCopy)
