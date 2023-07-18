@@ -67,3 +67,29 @@ console.log(Number("23"))
 console.log(+"23")
 // This (line: 67) works because when JavaScript sees the plus operator, it will do type coercion
 // It will automatically convert all the operands to numbers
+
+console.log("----- parseInt -----")
+// Parsing number from a string:
+// Number. object has some methods to do parsing
+console.log(Number.parseInt("30px"))
+// Inside of this .parseInt() method, we can specify a string and that string can even include some symbols
+// JavaScript will then automatically try to figure out the number that is in the string
+// In order to make this work, the string needs to start with a number, otherwise it will not work and we will get 'NaN'
+// .parseInt() function accepts a second argument, which is called 'regex'
+// Regex is the base of the numeral system that we are using
+// (line: 73) we are using base 10 numbers - numbers from 0 - 9
+// Most of the time, we are doing that, so we shoudl always pass in the number 10:
+console.log(Number.parseInt("30px", 10)) // This can avoid some bugs in some situations
+// But if we were working with binary, we would write 2 and the result would be completely different
+console.log(Number.parseInt("30px", 2))
+
+// There is also a method .parseFloat()
+console.log("----- parseFloat -----")
+console.log(Number.parseFloat("2.5rem")) // This reads the decimal number from our string
+// These 2 functions (line: 84 / 85) are so called global functions
+// We would not have to call them on Number
+console.log(parseFloat("2.5rem")) // This also works
+// This (line: 88) is more traditional and old-school way of doing it
+// Now in modern JavaScript it is more encouraged to call these functions on the Number object
+// Number object provides something called a 'namespace'
+// Namespace for all these different functions, like parseInt and parseFloat
