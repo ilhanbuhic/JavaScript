@@ -93,3 +93,24 @@ console.log(parseFloat("2.5rem")) // This also works
 // Now in modern JavaScript it is more encouraged to call these functions on the Number object
 // Number object provides something called a 'namespace'
 // Namespace for all these different functions, like parseInt and parseFloat
+
+// Function of the Number namespace ---> isNaN(is not a number)
+console.log("----- isNaN -----")
+// We can use this to check if some value is a number
+console.log(Number.isNaN(20)) // false
+console.log(Number.isNaN("20")) // false
+console.log(Number.isNaN(+"20X")) // true
+console.log(Number.isNaN(23 / 0)) // false
+
+console.log("----- isFinite -----")
+// .isFinite():
+// This method is a better way to check if some value is a number
+console.log(Number.isFinite(20))
+console.log(Number.isFinite("20"))
+console.log(Number.isFinite(+"20X"))
+console.log(Number.isFinite(23 / 0)) // false, because it's infinite
+
+console.log("----- isInteger -----")
+// .isInteger() is checking if a number is an integer or not
+console.log(Number.isInteger(20))
+console.log(Number.isInteger(20.0))
