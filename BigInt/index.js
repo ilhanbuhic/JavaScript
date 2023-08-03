@@ -26,3 +26,28 @@ console.log(3290185904890859034449032193) // Result: 3.290185904890859e+27
 // This number is not precise at all, but we can use 'n' at the end of a number, which will represent BigInt
 console.log(3290185904890859034449032193n)
 // This 'n' transforms a regular number, into a BigInt number
+
+// We can also use BigInt, by using the BigInt function
+console.log(BigInt(3290185904890859034449032193))
+// The results from (line: 27) and (line: 31) are different
+// It's better to represent big numbers using the code (line: 27), because in that case,
+// JavaScript will transform this number to BigInt straight away, but using BigInt function,
+// it will first represent this the number internally, before it can then transform it into a BigInt
+// We should use 'n' when working with big numbers and use BigInt function when working with a little smaller numbers
+
+// Operators work just the same with BigInt
+console.log(10000n + 10000n)
+console.log(8453495933290450925489032843920098534n * 10000n)
+// It's not possible to mix BigInts with regular numbers
+
+console.log(20n === 20)
+// This is false, because triple operator does not do type coercion
+// These two values have different primitive type
+console.log(typeof 20n, typeof 20)
+
+// We also can't use math operations with big ints
+// console.log(Math.sqrt(16n)) // This will not work
+
+// Division
+console.log(10n / 3n) // Result: 3n
+// This will return the closest number and cut the decimal part off
