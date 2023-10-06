@@ -175,9 +175,9 @@
 // join as many strings together as possible in order to obtain a palindrome.
 
 // Input: arr = ["ck", "kc", "ho", "kc"]
-// Output: 4
+// Output: 1. ckkc / 2. ckkc
 
-// Explanation being that the longest palindrome are "ckkc" and "kcck" which both have lengths of 4.
+// Make a polindrome combinations that can be achieved using first index[0] element
 
 const arr = ['ck', 'kc', 'ho', 'kc']
 
