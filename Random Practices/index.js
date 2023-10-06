@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 // 1. ----------------------------------------------------------------
 // Separating only even number in a nested array
@@ -179,16 +179,35 @@
 
 // Make a polindrome combinations that can be achieved using first index[0] element
 
-const arr = ['ck', 'kc', 'ho', 'kc']
+// const arr = ['ck', 'kc', 'ho', 'kc']
 
-let tempStr = [arr[0]]
-let palindromeElements = []
-const palindromeCombinations = []
-for (let i = 1; i < arr.length; i++) {
-  if (tempStr[0] === arr[i] || tempStr[0] === arr[i].split('').reverse().join('') && tempStr[0] !== arr) {
-    palindromeElements.push(arr[i])
-    palindromeCombinations.push(`Combination ${i}: ${tempStr[0]}, ${arr[i]}`)
+// let tempStr = [arr[0]]
+// let palindromeElements = []
+// const palindromeCombinations = []
+// for (let i = 1; i < arr.length; i++) {
+//   if (tempStr[0] === arr[i] || tempStr[0] === arr[i].split('').reverse().join('') && tempStr[0] !== arr) {
+//     palindromeElements.push(arr[i])
+//     palindromeCombinations.push(`Combination ${i}: ${tempStr[0]}, ${arr[i]}`)
+//   }
+// }
+// console.log(palindromeElements, palindromeCombinations);
+// 8. ----------------------------------------------------------------
+
+// 9. ----------------------------------------------------------------
+
+// Given an integer n, return a counter function.
+// This counter function initially returns n and then returns
+// 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
+
+var createCounter = function (n) {
+  let count = n
+  return function () {
+    return count++
   }
 }
-console.log(palindromeElements, palindromeCombinations);
-// 8. ----------------------------------------------------------------
+const counter = createCounter(10)
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+// 9. ----------------------------------------------------------------
