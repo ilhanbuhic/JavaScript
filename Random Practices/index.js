@@ -223,4 +223,9 @@ Array.prototype.last = function() {
 const arr = [1, 2, 3, 4]
 const last = arr.last()
 
+var checkIfInstanceOf = function(obj, classFunction) {
+  if (obj === null || obj === undefined || typeof classFunction !== 'function')
+  return Object(obj) instanceof classFunction
+};
+
 // 10. ----------------------------------------------------------------
