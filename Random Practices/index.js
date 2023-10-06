@@ -217,15 +217,34 @@
 // method on any array and it will return the last element. If there are no elements in the array, it should return -1.
 // You may assume the array is the output of JSON.parse.
 
-Array.prototype.last = function() {
-  return this.length > 0 ? this[this.length-1] : -1
-};
-const arr = [1, 2, 3, 4]
-const last = arr.last()
+// Array.prototype.last = function() {
+//   return this.length > 0 ? this[this.length-1] : -1
+// };
+// const arr = [1, 2, 3, 4]
+// const last = arr.last()
 
-var checkIfInstanceOf = function(obj, classFunction) {
-  if (obj === null || obj === undefined || typeof classFunction !== 'function')
-  return Object(obj) instanceof classFunction
-};
-
+// var checkIfInstanceOf = function(obj, classFunction) {
+//   if (obj === null || obj === undefined || typeof classFunction !== 'function')
+//   return Object(obj) instanceof classFunction
+// };
 // 10. ----------------------------------------------------------------
+
+// 11. ----------------------------------------------------------------
+// Given an array n, check if the second element of the array contains
+// all the string characters as the first one and return boolean
+// Input: [hey, hello] --> Output: false
+// Input: [hey, helloy] --> Output: true
+
+const arr = ['heyo', 'hello']
+
+const firstLetter = arr[1].split('')
+
+// includedLetters = []
+
+for (let i = 0; i < arr[1].length; i++) {
+  if (arr[0].includes(firstLetter[i])) {
+    console.log(`Contains: ${firstLetter[i]}`);
+  }
+}
+
+// 11. ----------------------------------------------------------------
