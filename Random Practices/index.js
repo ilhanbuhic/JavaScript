@@ -199,15 +199,28 @@
 // This counter function initially returns n and then returns
 // 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
 
-var createCounter = function (n) {
-  let count = n
-  return function () {
-    return count++
-  }
-}
-const counter = createCounter(10)
-console.log(counter());
-console.log(counter());
-console.log(counter());
+// var createCounter = function (n) {
+//   let count = n
+//   return function () {
+//     return count++
+//   }
+// }
+// const counter = createCounter(10)
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 
 // 9. ----------------------------------------------------------------
+
+// 10. ----------------------------------------------------------------
+// Write code that enhances all arrays such that you can call the array.last()
+// method on any array and it will return the last element. If there are no elements in the array, it should return -1.
+// You may assume the array is the output of JSON.parse.
+
+Array.prototype.last = function() {
+  return this.length > 0 ? this[this.length-1] : -1
+};
+const arr = [1, 2, 3, 4]
+const last = arr.last()
+
+// 10. ----------------------------------------------------------------
