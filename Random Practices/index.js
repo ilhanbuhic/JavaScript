@@ -150,22 +150,45 @@
 
 // Take the 2 biggest numbers from arrays in the array and subtract them with 20
 
-const arr = [
-  [100, 23, 240, 45],
-  [23, 2315, 151, 232],
-  [232, 121, 50],
-]
+// const arr = [
+//   [100, 23, 240, 45],
+//   [23, 2315, 151, 232],
+//   [232, 121, 50],
+// ]
 
-const newArr = []
+// const newArr = []
 
-for (let i = 0; i < arr.length; i++) {
-  newArr.push(arr[i].sort((a, b) => b - a))
-}
+// for (let i = 0; i < arr.length; i++) {
+//   newArr.push(arr[i].sort((a, b) => b - a))
+// }
 
-for (let i = 0; i < newArr.length; i++) {
-  for (let j = 0; j < 2; j++) {
-    newArr[i][j] = newArr[i][j] - 20
+// for (let i = 0; i < newArr.length; i++) {
+//   for (let j = 0; j < 2; j++) {
+//     newArr[i][j] = newArr[i][j] - 20
+//   }
+// }
+// console.log(newArr)
+
+// 8. ----------------------------------------------------------------
+
+// Given an array of X strings in which each string consists of two lowercase English letters,
+// join as many strings together as possible in order to obtain a palindrome.
+
+// Input: arr = ["ck", "kc", "ho", "kc"]
+// Output: 4
+
+// Explanation being that the longest palindrome are "ckkc" and "kcck" which both have lengths of 4.
+
+const arr = ['ck', 'kc', 'ho', 'kc']
+
+let tempStr = [arr[0]]
+let palindromeElements = []
+const palindromeCombinations = []
+for (let i = 1; i < arr.length; i++) {
+  if (tempStr[0] === arr[i] || tempStr[0] === arr[i].split('').reverse().join('') && tempStr[0] !== arr) {
+    palindromeElements.push(arr[i])
+    palindromeCombinations.push(`Combination ${i}: ${tempStr[0]}, ${arr[i]}`)
   }
 }
-console.log(newArr)
-
+console.log(palindromeElements, palindromeCombinations);
+// 8. ----------------------------------------------------------------
