@@ -257,19 +257,31 @@
 // Input: nums = [1,2,3,1]
 // Output: true
 
-var contain = function (nums) {
-  let check = {}
-  for (let i = 0; i < nums.length; i++) {
-    let num = nums[i]
-    if (check[num]) {
-      return true
-    } else {
-      check[num] = true
+// Solution #1:
+// const containsDuplicate = function (nums) {
+//   let checkDuplicate = {}
+//   for (let i = 0; i < nums.length; i++) {
+//     let num = nums[i]
+//     if (checkDuplicate[num]) {
+//       console.log(`Duplicate is found: ${num}`)
+//       return true
+//     } else {
+//       checkDuplicate[num] = true
+//     }
+//   }
+//   return false
+// }
+
+const containsDuplicate = (nums) => {
+  for (let right = 0; right < nums.length; right++) {
+    for (let left = 0; left < right; left++) {
+      let isDuplicate = nums[right] === nums[left]
+      if (isDuplicate) return true
     }
   }
   return false
 }
 
-console.log(contain([1, 2, 3, 4, 1]))
+console.log(containsDuplicate([1, 2, 3, 4, 1]))
 
 // 12. ----------------------------------------------------------------
