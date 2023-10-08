@@ -235,16 +235,41 @@
 // Input: [hey, hello] --> Output: false
 // Input: [hey, helloy] --> Output: true
 
-const arr = ['heyo', 'hello']
+// const arr = ['heyo', 'hello']
 
-const firstLetter = arr[1].split('')
+// const firstLetter = arr[1].split('')
 
-// includedLetters = []
+// // includedLetters = []
 
-for (let i = 0; i < arr[1].length; i++) {
-  if (arr[0].includes(firstLetter[i])) {
-    console.log(`Contains: ${firstLetter[i]}`);
-  }
-}
+// for (let i = 0; i < arr[1].length; i++) {
+//   if (arr[0].includes(firstLetter[i])) {
+//     console.log(`Contains: ${firstLetter[i]}`);
+//   }
+// }
 
 // 11. ----------------------------------------------------------------
+
+// 12. ----------------------------------------------------------------
+// Given an integer array nums, return true if any value appears at least twice in the array,
+// and return false if every element is distinct.
+
+// Example 1:
+// Input: nums = [1,2,3,1]
+// Output: true
+
+var contain = function (nums) {
+  let check = {}
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i]
+    if (check[num]) {
+      return true
+    } else {
+      check[num] = true
+    }
+  }
+  return false
+}
+
+console.log(contain([1, 2, 3, 4, 1]))
+
+// 12. ----------------------------------------------------------------
