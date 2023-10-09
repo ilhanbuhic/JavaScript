@@ -284,15 +284,26 @@
 // }
 
 // Solution #3:
-const containsDuplicate = function (nums, numSet = new Set()) {
-    for (const num of nums) {
-        if (numSet.has(num) === true) {
+// const containsDuplicate = function (nums, numSet = new Set()) {
+//     for (const num of nums) {
+//         if (numSet.has(num) === true) {
+//             return true
+//         } else numSet.add(num)
+//     }
+//     return false
+// }
+
+// Solution #4:
+const containsDuplicate = function(nums) {
+    for (let i = 0; i < nums.length; i++) {
+        nums = nums.sort()
+        if (nums[i] === nums[i + 1]) {
             return true
-        } else numSet.add(num)
+        }
     }
     return false
 }
 
-console.log(containsDuplicate([1, 2, 3, 4, 1]))
+console.log(containsDuplicate([1, 2, 3, 4]))
 
 // 12. ----------------------------------------------------------------
