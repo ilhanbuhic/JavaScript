@@ -294,16 +294,33 @@
 // }
 
 // Solution #4:
-const containsDuplicate = function(nums) {
-    for (let i = 0; i < nums.length; i++) {
-        nums = nums.sort()
-        if (nums[i] === nums[i + 1]) {
-            return true
-        }
-    }
-    return false
-}
+// const containsDuplicate = function(nums) {
+//     for (let i = 0; i < nums.length; i++) {
+//         nums = nums.sort()
+//         if (nums[i] === nums[i + 1]) {
+//             return true
+//         }
+//     }
+//     return false
+// }
 
-console.log(containsDuplicate([1, 2, 3, 4]))
+// console.log(containsDuplicate([1, 2, 3, 4]))
 
 // 12. ----------------------------------------------------------------
+
+// 13. ----------------------------------------------------------------
+
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+// An Anagram is a word or phrase formed by rearranging the letters of
+// a different word or phrase, typically using all the original letters exactly once.
+
+// var isAnagram = function (s, t) {
+//   for (const newS of s) {
+//     return s.includes(t) ? true : false
+//   }
+// }
+// console.log(isAnagram('car', 'rac'))
+
+// 13. ----------------------------------------------------------------
+
