@@ -259,27 +259,38 @@
 
 // Solution #1:
 // const containsDuplicate = function (nums) {
-//   let checkDuplicate = {}
-//   for (let i = 0; i < nums.length; i++) {
-//     let num = nums[i]
-//     if (checkDuplicate[num]) {
-//       console.log(`Duplicate is found: ${num}`)
-//       return true
-//     } else {
-//       checkDuplicate[num] = true
+// let checkDuplicate = {}
+// for (let i = 0; i < nums.length; i++) {
+//   let num = nums[i]
+//   if (checkDuplicate[num] !== undefined) {
+//     console.log(`Duplicate is found: ${num}`)
+//     return true
+//   } else {
+//     checkDuplicate[num] = true
+//   }
+// }
+// return false
+// }
+
+// Solution #2:
+// const containsDuplicate = (nums) => {
+//   for (let right = 0; right < nums.length; right++) {
+//     for (let left = 0; left <= right; left++) {
+//       let isDuplicate = nums[right] === nums[left]
+//       if (isDuplicate) return true
 //     }
 //   }
 //   return false
 // }
 
-const containsDuplicate = (nums) => {
-  for (let right = 0; right < nums.length; right++) {
-    for (let left = 0; left < right; left++) {
-      let isDuplicate = nums[right] === nums[left]
-      if (isDuplicate) return true
+// Solution #3:
+const containsDuplicate = function (nums, numSet = new Set()) {
+    for (const num of nums) {
+        if (numSet.has(num) === true) {
+            return true
+        } else numSet.add(num)
     }
-  }
-  return false
+    return false
 }
 
 console.log(containsDuplicate([1, 2, 3, 4, 1]))
