@@ -171,20 +171,20 @@
 // console.log(newArr)
 
 // Part #2:
-const arr = [ 200, 400, 320, 670, 940, 120]
+// const arr = [ 200, 400, 320, 670, 940, 120]
 
-let temp = []
-let storedTemp = []
+// let temp = []
+// let storedTemp = []
 
-for (let i = 0; i < arr.length; i++) {
-  temp.push(arr[i])
-  if (temp > arr[i + 1]) {
-    storedTemp = temp
-  } else {
-    temp.pop()
-  }
-}
-console.log(storedTemp)
+// for (let i = 0; i < arr.length; i++) {
+//   temp.push(arr[i])
+//   if (temp > arr[i + 1]) {
+//     storedTemp = temp
+//   } else {
+//     temp.pop()
+//   }
+// }
+// console.log(storedTemp)
 
 // 8. ----------------------------------------------------------------
 
@@ -364,5 +364,24 @@ console.log(storedTemp)
 //     }
 //   }
 // }
-
 // 14. ----------------------------------------------------------------
+
+// 15. ----------------------------------------------------------------
+// Create all permutations of a non-empty input string and remove duplicates, if present
+// Create as many 'shufflings' as possible
+
+// Solution #1 --> Inefficient way
+const char = ['a', 'b', 'c']
+
+for (let i = 0; i < char.length; i++) {
+  for (let j = 0; j < char.length; j++) {
+    for (let k = 0; k < char.length; k++) {
+      if (char[i] !== char[j] && char[j] !== char[k] && char[i] !== char[k]) {
+        const comb = char[i] + char[j] + char[k]
+        console.log(comb);
+      }
+    }
+  }
+}
+// 15. ----------------------------------------------------------------
+
