@@ -304,7 +304,16 @@
 //     return false
 // }
 
-// console.log(containsDuplicate([1, 2, 3, 4]))
+
+// Solution #5:
+const containsDuplicate = function(nums) {
+  const numSet = new Set(nums)
+  for (let i = 0; i < nums.length; i++) {
+    return nums.length === numSet.size ? false : true
+  }
+}
+
+console.log(containsDuplicate([1, 2, 3, 4, 1]))
 
 // 12. ----------------------------------------------------------------
 
