@@ -148,6 +148,7 @@
 // }
 // 7. ----------------------------------------------------------------
 
+// Part #1:
 // Take the 2 biggest numbers from arrays in the array and subtract them with 20
 
 // const arr = [
@@ -168,6 +169,22 @@
 //   }
 // }
 // console.log(newArr)
+
+// Part #2:
+const arr = [ 200, 400, 320, 670, 940, 120]
+
+let temp = []
+let storedTemp = []
+
+for (let i = 0; i < arr.length; i++) {
+  temp.push(arr[i])
+  if (temp > arr[i + 1]) {
+    storedTemp = temp
+  } else {
+    temp.pop()
+  }
+}
+console.log(storedTemp)
 
 // 8. ----------------------------------------------------------------
 
@@ -304,16 +321,15 @@
 //     return false
 // }
 
-
 // Solution #5:
-const containsDuplicate = function(nums) {
-  const numSet = new Set(nums)
-  for (let i = 0; i < nums.length; i++) {
-    return nums.length === numSet.size ? false : true
-  }
-}
+// const containsDuplicate = function (nums) {
+//   const numSet = new Set(nums)
+//   for (let i = 0; i < nums.length; i++) {
+//     return nums.length === numSet.size ? false : true
+//   }
+// }
 
-console.log(containsDuplicate([1, 2, 3, 4, 1]))
+// console.log(containsDuplicate([1, 2, 3, 4, 1]))
 
 // 12. ----------------------------------------------------------------
 
@@ -339,14 +355,14 @@ console.log(containsDuplicate([1, 2, 3, 4, 1]))
 // You can return the answer in any order.
 
 // Solution #1
-var twoSum = function (nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (nums[i] + nums[j] === target) {
-        return [i, j]
-      }
-    }
-  }
-}
+// var twoSum = function (nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = 0; j < i; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j]
+//       }
+//     }
+//   }
+// }
 
 // 14. ----------------------------------------------------------------
