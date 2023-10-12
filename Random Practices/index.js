@@ -389,14 +389,15 @@ const char = ['a', 'b', 'c']
 
 const emptyObj = {}
 const tempArr = []
-let randomIndex = 0
-console.log(randomIndex)
+let randomIndexes = []
 
-for (let i = 0; i < char.length; i++) {
-  randomIndex = Math.floor(Math.random() * 3)
-  if (tempArr[i] !== char[randomIndex]) {
+while (tempArr.length < char.length) {
+  let randomIndex = Math.floor(Math.random() * char.length)
+
+  if (!randomIndexes.includes(randomIndex)) {
     tempArr.push(char[randomIndex])
-    console.log(char[randomIndex], tempArr[i])
+    randomIndexes.push(randomIndex)
+    console.log(char[randomIndex], tempArr)
   }
 }
 
