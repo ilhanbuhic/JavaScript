@@ -371,17 +371,33 @@
 // Create as many 'shufflings' as possible
 
 // Solution #1 --> Inefficient way
+// const char = ['a', 'b', 'c']
+
+// for (let i = 0; i < char.length; i++) {
+//   for (let j = 0; j < char.length; j++) {
+//     for (let k = 0; k < char.length; k++) {
+//       if (char[i] !== char[j] && char[j] !== char[k] && char[i] !== char[k]) {
+//         const comb = char[i] + char[j] + char[k]
+//         console.log(comb);
+//       }
+//     }
+//   }
+// }
+
+// Solution #2
 const char = ['a', 'b', 'c']
 
+const emptyObj = {}
+const tempArr = []
+let randomIndex = 0
+console.log(randomIndex)
+
 for (let i = 0; i < char.length; i++) {
-  for (let j = 0; j < char.length; j++) {
-    for (let k = 0; k < char.length; k++) {
-      if (char[i] !== char[j] && char[j] !== char[k] && char[i] !== char[k]) {
-        const comb = char[i] + char[j] + char[k]
-        console.log(comb);
-      }
-    }
+  randomIndex = Math.floor(Math.random() * 3)
+  if (tempArr[i] !== char[randomIndex]) {
+    tempArr.push(char[randomIndex])
+    console.log(char[randomIndex], tempArr[i])
   }
 }
-// 15. ----------------------------------------------------------------
 
+// 15. ----------------------------------------------------------------
