@@ -385,50 +385,44 @@
 // }
 
 // Solution #2
-const chars = ['a', 'b', 'c'];
+// const chars = ['a', 'b', 'c'];
 
-function generateCombinations(arr, prefix = []) {
-  if (arr.length === 0) {
-    console.log(prefix.join(''));
-  } else {
-    for (let i = 0; i < arr.length; i++) {
-      const newPrefix = prefix.concat(arr[i]);
-      const remaining = arr.slice(0, i).concat(arr.slice(i + 1));
-      generateCombinations(remaining, newPrefix);
-    }
-  }
-}
-
-generateCombinations(chars);
-
-
-// Solution #3
-// const char = ['a', 'b', 'c']
-
-// const emptyObj = {}
-// const tempArr = []
-// let randomIndexes = []
-
-// while (tempArr.length < char.length) {
-//   let randomIndex = Math.floor(Math.random() * char.length)
-
-//   if (!randomIndexes.includes(randomIndex)) {
-//     if (tempArr.length === char.length) {
-//       tempArr.splice(0)
-//       randomIndexes.splice(0)
-//       console.log(tempArr, randomIndexes);
-//     } else {
-//       tempArr.push(char[randomIndex])
-//       randomIndexes.push(randomIndex)
-//       console.log(char[randomIndex], tempArr)
+// function generateCombinations(arr, prefix = []) {
+//   if (arr.length === 0) {
+//     console.log(prefix.join(''));
+//   } else {
+//     for (let i = 0; i < arr.length; i++) {
+//       const newPrefix = prefix.concat(arr[i]);
+//       const remaining = arr.slice(0, i).concat(arr.slice(i + 1));
+//       generateCombinations(remaining, newPrefix);
 //     }
 //   }
 // }
-// for (let i = 0; i < tempArr.length; i++) {
-//   if (emptyObj[tempArr] === undefined) {
-//     emptyObj[tempArr] = true
-//     console.log(emptyObj)
-//   }
-// }
+// generateCombinations(chars);
+
+// Solution #3
+const char = ['a', 'b', 'c']
+
+const emptyObj = {}
+const tempArr = []
+let randomIndexes = []
+
+while (tempArr.length < char.length) {
+  let randomIndex = Math.floor(Math.random() * char.length)
+
+  if (!randomIndexes.includes(randomIndex)) {
+    tempArr.push(char[randomIndex])
+    randomIndexes.push(randomIndex)
+    console.log(tempArr)
+  }
+}
+for (let i = 0; i < tempArr.length; i++) {
+  if (emptyObj[i] === undefined) {
+    emptyObj[tempArr] = true
+  }
+}
+console.log(emptyObj)
+
+// Solve it by using recursive function
 
 // 15. ----------------------------------------------------------------
