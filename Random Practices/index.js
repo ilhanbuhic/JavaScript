@@ -395,9 +395,21 @@ while (tempArr.length < char.length) {
   let randomIndex = Math.floor(Math.random() * char.length)
 
   if (!randomIndexes.includes(randomIndex)) {
-    tempArr.push(char[randomIndex])
-    randomIndexes.push(randomIndex)
-    console.log(char[randomIndex], tempArr)
+    if (tempArr.length === char.length) {
+      tempArr.splice(0)
+      randomIndexes.splice(0)
+      console.log(tempArr, randomIndexes);
+    } else {
+      tempArr.push(char[randomIndex])
+      randomIndexes.push(randomIndex)
+      console.log(char[randomIndex], tempArr)
+    }
+  }
+}
+for (let i = 0; i < tempArr.length; i++) {
+  if (emptyObj[tempArr] === undefined) {
+    emptyObj[tempArr] = true
+    console.log(emptyObj)
   }
 }
 
