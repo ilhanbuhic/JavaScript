@@ -401,37 +401,42 @@
 // generateCombinations(chars);
 
 // Solution #3
-const char = ['a', 'b', 'c']
+// const char = ['a', 'b', 'c']
 
-const emptyObj = {}
+// const emptyObj = {}
+// function factorial(n) {
+//   if (n === 0) {
+//     return 1
+//   }
+//   return n * factorial(n - 1)
+// }
 
-const generateCombinations = () => {
-  const tempArr = []
-  let randomIndexes = []
+// const generateCombinations = () => {
+//   const tempArr = []
+//   let randomIndexes = []
 
-  while (tempArr.length < char.length) {
-    let randomIndex = Math.floor(Math.random() * char.length)
+//   while (tempArr.length < char.length) {
+//     let randomIndex = Math.floor(Math.random() * char.length)
 
-    if (!randomIndexes.includes(randomIndex)) {
-      tempArr.push(char[randomIndex])
-      randomIndexes.push(randomIndex)
-    }
-  }
+//     if (!randomIndexes.includes(randomIndex)) {
+//       tempArr.push(char[randomIndex])
+//       randomIndexes.push(randomIndex)
+//     }
+//   }
 
-  if (!emptyObj[tempArr]) {
-    emptyObj[tempArr] = true
-    generateCombinations()
-  } else {
-    if (Object.keys(emptyObj).length >= 6) {
-      return null
-    } else generateCombinations()
-  }
-  generateCombinations()
-}
+//   if (!emptyObj[tempArr]) {
+//     emptyObj[tempArr] = true
+//     generateCombinations()
+//   } else {
+//     if (Object.keys(emptyObj).length >= factorial(char.length)) {
+//       return null
+//     } else generateCombinations()
+//   }
+//   // generateCombinations()
+// }
+// generateCombinations()
+// console.log(Object.keys(emptyObj).join('\n'))
 
-generateCombinations()
-
-console.log(emptyObj)
 
 // Solve it by using recursive function
 
