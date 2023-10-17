@@ -401,37 +401,60 @@
 // generateCombinations(chars);
 
 // Solution #3
-const char = ['a', 'b', 'c']
+// const char = ['a', 'b', 'c']
 
-const emptyObj = {}
+// const emptyObj = {}
 
-const generateCombinations = () => {
-  const tempArr = []
-  let randomIndexes = []
+// const generateCombinations = () => {
+//   const tempArr = []
+//   let randomIndexes = []
 
-  while (tempArr.length < char.length) {
-    let randomIndex = Math.floor(Math.random() * char.length)
+//   while (tempArr.length < char.length) {
+//     let randomIndex = Math.floor(Math.random() * char.length)
 
-    if (!randomIndexes.includes(randomIndex)) {
-      tempArr.push(char[randomIndex])
-      randomIndexes.push(randomIndex)
-    }
-  }
+//     if (!randomIndexes.includes(randomIndex)) {
+//       tempArr.push(char[randomIndex])
+//       randomIndexes.push(randomIndex)
+//     }
+//   }
 
-  if (!emptyObj[tempArr]) {
-    emptyObj[tempArr] = true
-  } else {
-    console.log('All comb found')
-    return null
-  }
+//   if (!emptyObj[tempArr] && Object.keys(emptyObj).length >= 6) {
+//     emptyObj[tempArr] = true
+//   } else {
+//     console.log('All combinations found')
+//     return null
+//   }
 
-  generateCombinations()
-}
+//   generateCombinations()
+// }
 
-generateCombinations()
+// generateCombinations()
 
-console.log(emptyObj)
+// console.log(emptyObj)
 
 // Solve it by using recursive function
 
+// Solution #4
+const chars = ['a', 'b', 'c', 'd']
+const combinations = []
+
+function factorial(n) {
+  if (n === 0) {
+    return 1
+  }
+  return n * factorial(n - 1)
+}
+
+const generateCombinations = (arr, combinations) => {
+  function shuffleArray(arr) {
+    const tempArr = []
+    while (tempArr.length !== arr.length) {
+      let randomIndex = Math.floor(Math.random() * arr.length)
+      if (!tempArr.includes(arr[randomIndex])) {
+        tempArr.push(arr[randomIndex])
+      }
+    }
+    return tempArr.join('')
+  }
+}
 // 15. ----------------------------------------------------------------
