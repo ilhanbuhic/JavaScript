@@ -401,72 +401,73 @@
 // generateCombinations(chars);
 
 // Solution #3
-// const char = ['a', 'b', 'c']
+const char = ['a', 'b', 'c']
 
-// const emptyObj = {}
+const emptyObj = {}
 
-// const generateCombinations = () => {
-//   const tempArr = []
-//   let randomIndexes = []
+const generateCombinations = () => {
+  const tempArr = []
+  let randomIndexes = []
 
-//   while (tempArr.length < char.length) {
-//     let randomIndex = Math.floor(Math.random() * char.length)
+  while (tempArr.length < char.length) {
+    let randomIndex = Math.floor(Math.random() * char.length)
 
-//     if (!randomIndexes.includes(randomIndex)) {
-//       tempArr.push(char[randomIndex])
-//       randomIndexes.push(randomIndex)
-//     }
-//   }
+    if (!randomIndexes.includes(randomIndex)) {
+      tempArr.push(char[randomIndex])
+      randomIndexes.push(randomIndex)
+    }
+  }
 
-//   if (!emptyObj[tempArr] && Object.keys(emptyObj).length >= 6) {
-//     emptyObj[tempArr] = true
-//   } else {
-//     console.log('All combinations found')
-//     return null
-//   }
+  if (!emptyObj[tempArr]) {
+    emptyObj[tempArr] = true
+    generateCombinations()
+  } else {
+    if (Object.keys(emptyObj).length >= 6) {
+      return null
+    } else generateCombinations()
+  }
+  generateCombinations()
+}
 
-//   generateCombinations()
-// }
+generateCombinations()
 
-// generateCombinations()
-
-// console.log(emptyObj)
+console.log(emptyObj)
 
 // Solve it by using recursive function
 
 // Solution #4
-const chars = ['a', 'b', 'c', 'd']
-const combinations = []
+// const chars = ['a', 'b', 'c', 'd']
+// const combinations = []
 
-function factorial(n) {
-  if (n === 0) {
-    return 1
-  }
-  return n * factorial(n - 1)
-}
+// function factorial(n) {
+//   if (n === 0) {
+//     return 1
+//   }
+//   return n * factorial(n - 1)
+// }
 
-const generateCombinations = (arr, combinations) => {
-  function shuffleArray(arr) {
-    const tempArr = []
-    while (tempArr.length !== arr.length) {
-      let randomIndex = Math.floor(Math.random() * arr.length)
-      if (!tempArr.includes(arr[randomIndex])) {
-        tempArr.push(arr[randomIndex])
-      }
-    }
-    return tempArr.join('')
-  }
+// const generateCombinations = (arr, combinations) => {
+//   function shuffleArray(arr) {
+//     const tempArr = []
+//     while (tempArr.length !== arr.length) {
+//       let randomIndex = Math.floor(Math.random() * arr.length)
+//       if (!tempArr.includes(arr[randomIndex])) {
+//         tempArr.push(arr[randomIndex])
+//       }
+//     }
+//     return tempArr.join('')
+//   }
 
-  const randomCombination = shuffleArray(arr)
-  if (!combinations.includes(randomCombination)) {
-    combinations.push(randomCombination)
-    generateCombinations(chars, combinations)
-  } else {
-    if (combinations.length >= factorial(arr.length)) {
-      return null
-    } else generateCombinations(chars, combinations)
-  }
-}
-generateCombinations(chars, combinations)
-console.log(combinations.join('\n'))
+//   const randomCombination = shuffleArray(arr)
+//   if (!combinations.includes(randomCombination)) {
+//     combinations.push(randomCombination)
+//     generateCombinations(chars, combinations)
+//   } else {
+//     if (combinations.length >= factorial(arr.length)) {
+//       return null
+//     } else generateCombinations(chars, combinations)
+//   }
+// }
+// generateCombinations(chars, combinations)
+// console.log(combinations.join('\n'))
 // 15. ----------------------------------------------------------------
