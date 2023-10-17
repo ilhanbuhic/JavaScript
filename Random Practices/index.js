@@ -404,23 +404,32 @@
 const char = ['a', 'b', 'c']
 
 const emptyObj = {}
-const tempArr = []
-let randomIndexes = []
 
-while (tempArr.length < char.length) {
-  let randomIndex = Math.floor(Math.random() * char.length)
+const generateCombinations = () => {
+  const tempArr = []
+  let randomIndexes = []
 
-  if (!randomIndexes.includes(randomIndex)) {
-    tempArr.push(char[randomIndex])
-    randomIndexes.push(randomIndex)
-    console.log(tempArr)
+  while (tempArr.length < char.length) {
+    let randomIndex = Math.floor(Math.random() * char.length)
+
+    if (!randomIndexes.includes(randomIndex)) {
+      tempArr.push(char[randomIndex])
+      randomIndexes.push(randomIndex)
+    }
   }
-}
-for (let i = 0; i < tempArr.length; i++) {
-  if (emptyObj[i] === undefined) {
+
+  if (!emptyObj[tempArr]) {
     emptyObj[tempArr] = true
+  } else {
+    console.log('All comb found')
+    return null
   }
+
+  generateCombinations()
 }
+
+generateCombinations()
+
 console.log(emptyObj)
 
 // Solve it by using recursive function
