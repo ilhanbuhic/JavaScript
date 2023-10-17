@@ -456,5 +456,17 @@ const generateCombinations = (arr, combinations) => {
     }
     return tempArr.join('')
   }
+
+  const randomCombination = shuffleArray(arr)
+  if (!combinations.includes(randomCombination)) {
+    combinations.push(randomCombination)
+    generateCombinations(chars, combinations)
+  } else {
+    if (combinations.length >= factorial(arr.length)) {
+      return null
+    } else generateCombinations(chars, combinations)
+  }
 }
+generateCombinations(chars, combinations)
+console.log(combinations.join('\n'))
 // 15. ----------------------------------------------------------------
