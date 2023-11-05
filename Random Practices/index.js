@@ -403,7 +403,6 @@
 // Solution #3
 // const char = ['a', 'b', 'c']
 
-// const emptyObj = {}
 // function factorial(n) {
 //   if (n === 0) {
 //     return 1
@@ -411,6 +410,7 @@
 //   return n * factorial(n - 1)
 // }
 
+// const emptyObj = {}
 // const generateCombinations = () => {
 //   const tempArr = []
 //   let randomIndexes = []
@@ -436,7 +436,6 @@
 // }
 // generateCombinations()
 // console.log(Object.keys(emptyObj).join('\n'))
-
 
 // Solve it by using recursive function
 
@@ -476,3 +475,20 @@
 // generateCombinations(chars, combinations)
 // console.log(combinations.join('\n'))
 // 15. ----------------------------------------------------------------
+
+// Find on which index is the target
+
+// Solution #1:
+let nums = [-1, 0, 3, 5, 9, 12]
+let target = 9
+
+function findTarget(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
+      return i
+    }
+  }
+  return -1
+}
+
+console.log(findTarget(nums, target))
