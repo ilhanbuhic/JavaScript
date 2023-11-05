@@ -479,16 +479,39 @@
 // Find on which index is the target
 
 // Solution #1:
+// let nums = [-1, 0, 3, 5, 9, 12]
+// let target = 9
+
+// function findTarget(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       return i
+//     }
+//   }
+//   return -1
+// }
+
+// console.log(findTarget(nums, target));
+
+// Solution #2:
 let nums = [-1, 0, 3, 5, 9, 12]
 let target = 9
 
-function findTarget(nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      return i
+function binarySearch(nums, target) {
+  let left = 0
+  let right = nums.length - 1
+
+  while (left <= right) {
+    let mid = Math.floor((right+left) /2)
+    if (nums[mid] === target) return mid
+
+    if (nums[mid] < target) {
+      left = mid + 1
+    } else {
+      right = mid - 1
     }
   }
   return -1
 }
 
-console.log(findTarget(nums, target))
+console.log(binarySearch(nums, target))
