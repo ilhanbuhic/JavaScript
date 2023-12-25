@@ -571,10 +571,31 @@
 // create a new function for doubling numbers and applying it to an array
 // using Array.prototype
 
-Array.prototype.doubleProto = function (arg) {
-  return this.map((curr) => curr * arg)
-}
-const a = [1, 2, 3, 4]
-console.log(a.doubleProto(2))
+// Array.prototype.doubleProto = function (arg) {
+//   return this.map((curr) => curr * arg)
+// }
+// const a = [1, 2, 3, 4]
+// console.log(a.doubleProto(2))
 
 // 19. ----------------------------------------------------------------
+
+// 20. ----------------------------------------------------------------
+
+function ChristmasTree(height) {
+  for (let i = 1; i <= height; i++) {
+    const spaces = ' '.repeat(height - i);
+    const stars = '*'.repeat(2 * i - 1);
+    console.log(spaces + stars);
+  }
+
+  // Print the tree trunk
+  const trunkSpaces = ' '.repeat(height - 1);
+  console.log(trunkSpaces + '*');
+  console.log(trunkSpaces + '*');
+}
+
+// Adjust the height as needed
+ChristmasTree(30);
+
+
+// 20. ----------------------------------------------------------------
