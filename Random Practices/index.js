@@ -548,3 +548,21 @@
 // console.log(arrNoDuplicates)
 
 // 17. ----------------------------------------------------------------
+
+// 18. ----------------------------------------------------------------
+// Defining higher-order function, 
+// create a new function for doubling numbers and applying it to an array
+
+function multiplyFunc(a) {
+  return function(b) {
+    return a * b
+  }
+}
+
+const double = multiplyFunc(2)
+const doubleArrayFunc = arr => arr.map(double)
+console.log(doubleArrayFunc([1, 2, 3, 4]));
+
+// 18. ----------------------------------------------------------------
+
+
