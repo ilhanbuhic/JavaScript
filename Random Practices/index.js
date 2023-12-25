@@ -582,21 +582,27 @@
 // 20. ----------------------------------------------------------------
 // Making a christmas tree
 
-function ChristmasTree(height) {
-  for (let i = 1; i <= height; i++) {
-    const spaces = ' '.repeat(height - i);
-    const stars = '*'.repeat(2 * i - 1);
-    console.log(spaces + stars);
-  }
+function ChristmasTree(layers) {
+  for (let i = 1; i <= layers; i++) {
+    let spaces = ''
+    for (let j = 0; j < layers - i; j++) {
+      spaces += ' '
+    }
 
-  // Print the tree trunk
-  const trunkSpaces = ' '.repeat(height - 1);
-  console.log(trunkSpaces + '*');
-  console.log(trunkSpaces + '*');
+    let stars = ''
+    for (let k = 0; k < 2 * i - 1; k++) {
+      stars += '*'
+    }
+
+    console.log(spaces + stars)
+  }
+  
+  const trunkSpaces = ' '.repeat(layers - 1)
+  console.log(trunkSpaces + '*')
+  console.log(trunkSpaces + '*')
 }
 
-// Adjust the height as needed
-ChristmasTree(30);
-
+// Adjust the number of layers as needed
+ChristmasTree(30)
 
 // 20. ----------------------------------------------------------------
