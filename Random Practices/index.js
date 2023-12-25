@@ -550,29 +550,31 @@
 // 17. ----------------------------------------------------------------
 
 // 18. ----------------------------------------------------------------
-// Defining higher-order function, 
+// Defining higher-order function,
 // create a new function for doubling numbers and applying it to an array
+// by creating multiple functions
 
-function multiplyFunc(a) {
-  return function(b) {
-    return a * b
-  }
-}
+// function multiplyFunc(a) {
+//   return function(b) {
+//     return a * b
+//   }
+// }
 
-const double = multiplyFunc(2)
-const doubleArrayFunc = arr => arr.map(double)
-console.log(doubleArrayFunc([1, 2, 3, 4]));
+// const double = multiplyFunc(2)
+// const doubleArrayFunc = arr => arr.map(double)
+// console.log(doubleArrayFunc([1, 2, 3, 4]));
 
 // 18. ----------------------------------------------------------------
 
 // 19. ----------------------------------------------------------------
-Array.prototype.doubleProto = function(arg) {
+// Defining higher-order function,
+// create a new function for doubling numbers and applying it to an array
+// using Array.prototype
+
+Array.prototype.doubleProto = function (arg) {
   return this.map((curr) => curr * arg)
 }
-const a = [1, 2, 3, 4, 5]
-console.log(a.doubleProto(2));
-
-
+const a = [1, 2, 3, 4]
+console.log(a.doubleProto(2))
 
 // 19. ----------------------------------------------------------------
-
