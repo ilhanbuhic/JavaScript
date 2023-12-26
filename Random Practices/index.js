@@ -603,6 +603,6 @@ function ChristmasTree(layers) {
 }
 
 // Adjust the number of layers as needed
-ChristmasTree(30)
+ChristmasTree(30))
 
 // 20. ----------------------------------------------------------------
