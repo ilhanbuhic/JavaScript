@@ -608,7 +608,7 @@ ChristmasTree(30)
 // 20. ----------------------------------------------------------------
 
 // 21. ----------------------------------------------------------------
-// Create your own .split() function
+// Create your own .split() function using .prototype
 
 Array.prototype.ilhanSplit = function () {
   let split = []
