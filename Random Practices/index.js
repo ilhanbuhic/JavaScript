@@ -582,28 +582,27 @@
 // 20. ----------------------------------------------------------------
 // Making a christmas tree
 
-function ChristmasTree(layers) {
-  for (let i = 1; i <= layers; i++) {
-    let spaces = ''
-    for (let j = 0; j < layers - i; j++) {
-      spaces += ' '
-    }
+// function ChristmasTree(layers) {
+//   for (let i = 1; i <= layers; i++) {
+//     let spaces = ''
+//     for (let j = 0; j < layers - i; j++) {
+//       spaces += ' '
+//     }
 
-    let stars = ''
-    for (let k = 0; k < 2 * i - 1; k++) {
-      stars += '*'
-    }
+//     let stars = ''
+//     for (let k = 0; k < 2 * i - 1; k++) {
+//       stars += '*'
+//     }
 
-    console.log(spaces + stars)
-  }
+//     console.log(spaces + stars)
+//   }
 
-  const trunkSpaces = ' '.repeat(layers - 1)
-  console.log(trunkSpaces + '*')
-  console.log(trunkSpaces + '*')
-}
+//   const trunkSpaces = ' '.repeat(layers - 1)
+//   console.log(trunkSpaces + '*')
+//   console.log(trunkSpaces + '*')
+// }
 
-// Adjust the number of layers as needed
-ChristmasTree(30)
+// ChristmasTree(30)
 
 // 20. ----------------------------------------------------------------
 
@@ -632,3 +631,16 @@ Array.prototype.ilhanSplit = function () {
 
 // 21. ----------------------------------------------------------------
 
+class MyReverseExtension extends Array {
+  ilhanReverse() {
+    let reversed = ''
+    for (let i = this.length - 1; i >= 0; i--) {
+      if (this[i] !== ' ') {
+        reversed = reversed + this[i] + ' '
+      } else {
+        reversed += this[i]
+      }
+    }
+    return reversed
+  }
+}
