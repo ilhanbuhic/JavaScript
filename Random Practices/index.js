@@ -609,25 +609,25 @@
 // 21. ----------------------------------------------------------------
 // Create your own .split() function using .prototype
 
-Array.prototype.ilhanSplit = function () {
-  let split = []
-  let cur = ''
+// Array.prototype.ilhanSplit = function () {
+//   let split = []
+//   let cur = ''
 
-  for (let i = 0; i < this.length; i++) {
-    if (this[i] !== ' ') {
-      cur += this[i]
-    } else {
-      split.push(cur)
-      cur = ''
-    }
-  }
+//   for (let i = 0; i < this.length; i++) {
+//     if (this[i] !== ' ') {
+//       cur += this[i]
+//     } else {
+//       split.push(cur)
+//       cur = ''
+//     }
+//   }
 
-  if (cur !== '') {
-    split.push(cur)
-  }
+//   if (cur !== '') {
+//     split.push(cur)
+//   }
 
-  return split
-}
+//   return split
+// }
 
 // 21. ----------------------------------------------------------------
 // Create your own .reverse() function using class exntension
