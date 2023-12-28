@@ -596,7 +596,7 @@ function ChristmasTree(layers) {
 
     console.log(spaces + stars)
   }
-  
+
   const trunkSpaces = ' '.repeat(layers - 1)
   console.log(trunkSpaces + '*')
   console.log(trunkSpaces + '*')
@@ -606,3 +606,29 @@ function ChristmasTree(layers) {
 ChristmasTree(30)
 
 // 20. ----------------------------------------------------------------
+
+// 21. ----------------------------------------------------------------
+// Create your own .split() function
+
+Array.prototype.ilhanSplit = function () {
+  let split = []
+  let cur = ''
+
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] !== ' ') {
+      cur += this[i]
+    } else {
+      split.push(cur)
+      cur = ''
+    }
+  }
+
+  if (cur !== '') {
+    split.push(cur)
+  }
+
+  return split
+}
+
+// 21. ----------------------------------------------------------------
+
