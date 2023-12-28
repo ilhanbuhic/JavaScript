@@ -630,6 +630,7 @@ Array.prototype.ilhanSplit = function () {
 }
 
 // 21. ----------------------------------------------------------------
+// Create your own .reverse() function using class exntension
 
 class MyReverseExtension extends Array {
   ilhanReverse() {
