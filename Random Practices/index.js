@@ -645,21 +645,3 @@
 //     return reversed
 //   }
 // }
-
-const sentence = 'Ja sam taj momak'
-let tempWord = ''
-const splittedSentence = []
-
-function reversed() {
-  for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] !== ' ') {
-      tempWord += sentence[i]
-    } else {
-      splittedSentence.push(tempWord)
-      tempWord = ''
-    }
-  }
-  return splittedSentence
-}
-const result = reversed()
-console.log(result);
