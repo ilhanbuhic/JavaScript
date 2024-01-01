@@ -632,16 +632,16 @@
 // 21. ----------------------------------------------------------------
 // Create your own .reverse() function using class exntension
 
-// class MyReverseExtension extends Array {
-//   ilhanReverse() {
-//     let reversed = ''
-//     for (let i = this.length - 1; i >= 0; i--) {
-//       if (this[i] !== ' ') {
-//         reversed = reversed + this[i] + ' '
-//       } else {
-//         reversed += this[i]
-//       }
-//     }
-//     return reversed
-//   }
-// }
+class MyReverseExtension extends Array {
+  ilhanReverse() {
+    let reversed = ''
+    for (let i = this.length - 1; i >= 0; i--) {
+      if (this[i] !== ' ') {
+        reversed = reversed + this[i] + ' '
+      } else {
+        reversed += this[i]
+      }
+    }
+    return reversed
+  }
+}
