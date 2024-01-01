@@ -632,16 +632,34 @@
 // 21. ----------------------------------------------------------------
 // Create your own .reverse() function using class exntension
 
-class MyReverseExtension extends Array {
-  ilhanReverse() {
-    let reversed = ''
-    for (let i = this.length - 1; i >= 0; i--) {
-      if (this[i] !== ' ') {
-        reversed = reversed + this[i] + ' '
-      } else {
-        reversed += this[i]
-      }
+// class MyReverseExtension extends Array {
+//   ilhanReverse() {
+//     let reversed = ''
+//     for (let i = this.length - 1; i >= 0; i--) {
+//       if (this[i] !== ' ') {
+//         reversed = reversed + this[i] + ' '
+//       } else {
+//         reversed += this[i]
+//       }
+//     }
+//     return reversed
+//   }
+// }
+
+const sentence = 'Ja sam taj momak'
+let tempWord = ''
+const splittedSentence = []
+
+function reversed() {
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== ' ') {
+      tempWord += sentence[i]
+    } else {
+      splittedSentence.push(tempWord)
+      tempWord = ''
     }
-    return reversed
   }
+  return splittedSentence
 }
+const result = reversed()
+console.log(result);
