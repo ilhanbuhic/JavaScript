@@ -643,5 +643,5 @@ class MyReverseExtension extends Array {
       }
     }
     return reversed
-  }
+  }.
 }
