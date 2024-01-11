@@ -1,4 +1,4 @@
-'use strict'
+"use strict"
 
 // We have 2 kinds of times
 // 1. setTimeout() timer that runs once after a defined time
@@ -9,7 +9,7 @@
 
 // Simulation of ordering pizza:
 setTimeout(
-  () => console.log('Here is your pizza🍕'),
+  () => console.log("Here is your pizza🍕"),
   3000 /* Passing in the amount of miliseconds that will pass until this function is called */
 )
 // We do not call this function ourselves, but we pass in this function as an argument to setTimeout
@@ -19,18 +19,18 @@ setTimeout(
 // The code execution does not stop here at this point
 // When the execution of our code reaches this point, it will call the setTimeout() function,
 // it will then register the callback function to be called later. Then the code execution continues
-console.log('Waiting...')
+console.log("Waiting...")
 
 // Using a setTimeout() with arguments
 setTimeout(
   (ing1, ing2) => console.log(`Here is your pizza with ${ing1}, ${ing2}🍕`),
   2000,
-  'olives',
-  'spinach'
+  "olives",
+  "spinach"
 )
 
 // We can also do this:
-const ingredients = ['cheese', 'hambuger sauce']
+const ingredients = ["cheese", "hambuger sauce"]
 const burgerTimer = setTimeout(
   (ing1, ing2) => console.log(`Hamburger with ${ingredients}`),
   2500,
@@ -38,4 +38,19 @@ const burgerTimer = setTimeout(
 )
 
 // We can also cancel the timer, until the delay has actually passed
-if (ingredients.includes('hambuger sauce')) clearTimeout(burgerTimer)
+if (ingredients.includes("hambuger sauce")) clearTimeout(burgerTimer)
+
+// setInterval()
+// We can use setInterval() function, if we want to run a function over and over again, like every 5 seconds
+const stani = setInterval(
+  function () {
+    const now = new Date()
+    const secondsOfNow = now.getSeconds().toString().padStart(2, 0).parseInt(secondsOfNow, 10)
+    const minutesOfNow = now.getMinutes()
+    const hoursOfNow = now.getHours()
+    const monthOfNow = now.getMonth()
+    const yearOfNow = now.getFullYear()
+    console.log(`${yearOfNow}:${monthOfNow} / ${hoursOfNow}:${minutesOfNow}:${secondsOfNow}`)
+    console.log(typeof secondsOfNow, typeof minutesOfNow)
+  }, 1000 /* After each second, our callback function is being called */
+)
