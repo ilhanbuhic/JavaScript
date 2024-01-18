@@ -16,4 +16,21 @@ We also have different nemaspaces with Number
 Example: Number.parseFloat
 These methods are actually static methods and it's static on the Number, Array constructor  
 */
-``
+
+// Creating static methods for both constructor functions and class
+
+// Constructor function:
+const Person = function (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+
+const ilhan = new Person('Ilhan', 'Buhic')
+console.log(ilhan)
+
+// To add a static method, all we have to do is write:
+Person.hey = function () {
+  console.log(`Hey there 👋 ${ilhan.firstName}`)
+}
+
+Person.hey()
