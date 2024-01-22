@@ -34,3 +34,22 @@ Person.hey = function () {
 }
 
 Person.hey()
+
+// We cannot do:
+// ilhan.hey()
+// because its not in the prototype of ilhan object
+
+// Class:
+class PersonCl {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  static hey() {
+    console.log(`Hey there 👋 ${ilhan.firstName}`)
+  }
+}
+
+const ilhanCl = new PersonCl('Ilhan', 'Buhic')
+console.log(ilhanCl)
+PersonCl.hey()
