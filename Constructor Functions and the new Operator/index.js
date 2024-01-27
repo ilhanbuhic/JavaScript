@@ -40,3 +40,19 @@ const Person = function (firstName, birthytYear) {
 
 const ilhan = new Person('Ilhan', 1998)
 console.log(ilhan)
+
+/*
+NEW operator is a special operator, because it calls the function
+Behind the scenes, the NEW operator will do 4 steps
+1. New, empty object is created
+2. The function is called and in this function call, the .this keyword will be set to this newly created object
+The .this keyword is this new empty object. In the execution context of the 'Person' function, the .this keyword
+will point to this new object here that was created in step number 1
+All of this happens only because we are calling the function using the NEW operator
+3. Newly created object is linked to a prototype
+4. Function automatically returns that empty object
+*/
+
+// We can now use this constructor function to create as many different objects as we want
+const emina = new Person('Emina', 2003)
+console.log(emina)
