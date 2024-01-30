@@ -56,3 +56,14 @@ All of this happens only because we are calling the function using the NEW opera
 // We can now use this constructor function to create as many different objects as we want
 const emina = new Person('Emina', 2003)
 console.log(emina)
+
+/*
+In classical OOP, an object created from a class is called an instance
+We didn't technically create a class here, because JavaScript doesn't really have classes, in the sense of traditional OOP
+We did create an object from a constructor function
+Constructor functions have been used since the beginning of JavaScript to kind of simulate classes
+We can say that 'ilhan' and 'emina' is an instance of a 'Person'
+*/
+
+// We can also check:
+console.log(ilhan instanceof Person) // This will return boolean
