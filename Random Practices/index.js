@@ -1,5 +1,5 @@
 'use strict'
-
+.
 // 1. ----------------------------------------------------------------
 // Separating only even number in a nested array
 
