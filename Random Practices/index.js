@@ -8,7 +8,7 @@
 //   [13, 17, 20, 65],
 //   [25, 92, 43, 57],
 // ]
-.
+
 // const even = []
 // for (let i = 0; i < arr.length; i++) {
 //   const nestedArray = []
