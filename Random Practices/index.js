@@ -646,5 +646,133 @@
 //     }
 //     return reversed
 //   }
-// }.
+// }
 // 22. ----------------------------------------------------------------
+
+// 23. ----------------------------------------------------------------
+/* 
+    Create a function that will transform the first letter
+    of each word inside the string into a capital letter,
+    while every 3rd letter will also be a capital letter 
+    (you don't need to create a function that will only 
+    transform every letter with an odd index)
+    */
+
+// Solution #2:
+// Creating 3 separate functions, where each of them will work for itself
+// function firstUpperCase(string) {
+//     let splitted = string.split(' ')
+//     for (let i = 0; i < splitted.length; i++) {
+//       splitted[i] = splitted[i][0].toUpperCase() + splitted[i].slice(1)
+//     }
+//     return splitted
+//   }
+
+//   function transformEverySecond(words) {
+//     let arr = []
+//     for (let i = 0; i < words.length; i++) {
+//       let newWord = ''
+//       for (let j = 0; j < words[i].length; j++) {
+//         if (j % 2 === 1) {
+//           newWord += words[i][j].toUpperCase()
+//         } else {
+//           newWord += words[i][j]
+//         }
+//       }
+//       arr.push(newWord)
+//     }
+//     return arr
+//   }
+
+//   function combinedTransform(string) {
+//     const firstTransform = firstUpperCase(string)
+//     const finalTransform = transformEverySecond(firstTransform)
+//     return finalTransform
+//   }
+
+//   console.log(combinedTransform('hello ilhan'))
+
+// Solution #3:
+// Creating 2 separete functions, where 2nd function will accept
+// 2 parameters: array of words and function
+// function firstUpperCase(string) {
+//     let splitted = string.split(' ')
+//     for (let i = 0; i < splitted.length; i++) {
+//       splitted[i] = splitted[i][0].toUpperCase() + splitted[i].slice(1)
+//     }
+//     return splitted
+//   }
+
+//   function transformEverySecond(words, fn) {
+//     let firstTransform = fn(words)
+//     let arr = []
+//     for (let i = 0; i < firstTransform.length; i++) {
+//       let newWord = ''
+//       for (let j = 0; j < firstTransform[i].length; j++) {
+//         if (j % 2 === 1) {
+//           newWord += firstTransform[i][j].toUpperCase()
+//         } else {
+//           newWord += firstTransform[i][j]
+//         }
+//       }
+//       arr.push(newWord)
+//     }
+//     return arr
+//   }
+//   console.log(transformEverySecond('hello ilhan', firstUpperCase))
+
+// 23. ----------------------------------------------------------------
+
+// 24. ----------------------------------------------------------------
+
+/* 
+    Create a function that accepts a String as an argument
+
+    The string is supposed to be HTML, but all the div elements are missing their
+    closing tags (they have < and >)
+
+    The function's job is to find and close all the divs in the provided HTML String
+
+    The function should return the entire corrected String
+*/
+
+function closeDivTags(string) {
+  let divObj = {}
+  let matchedAll = [...string.matchAll(/<div>/g)]
+  let lastIndex = 0
+
+  let resultString = matchedAll.reduce((acc, cur, index) => {
+    // Store the end index of each <div> tag
+    divObj[`div${index + 1}`] = cur.index + cur[0].length
+
+    // Add the string part before the current <div>
+    acc += string.slice(lastIndex, cur.index)
+
+    if (Object.entries(divObj).length % 2 === 0) {
+      // Replace the last <div> with </div>
+      acc += '</div>'
+      // Reset the divObj if it's even
+      divObj = {}
+    } else if (index > 0 && Object.entries(divObj).length % 2 !== 0) {
+      acc += acc.slice(cur.index, lastIndex) + cur[0] + '</div>'
+    } else {
+      // Add the current <div> tag to the result
+      acc += cur[0]
+    }
+
+    // Update lastIndex to the end of the current <div> tag
+    lastIndex = cur.index + cur[0].length
+
+    return acc
+  }, '')
+
+  // Add the remaining part of the string after the last <div> tag
+  resultString += string.slice(lastIndex)
+
+  return resultString
+}
+
+let testString = '<div><div>Ilhan is here<div>'
+console.log(closeDivTags(testString))
+
+// 24. ----------------------------------------------------------------
