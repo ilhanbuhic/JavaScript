@@ -736,43 +736,43 @@
     The function should return the entire corrected String
 */
 
-function closeDivTags(string) {
-  let divObj = {}
-  let matchedAll = [...string.matchAll(/<div>/g)]
-  let lastIndex = 0
+// function closeDivTags(string) {
+//   let divObj = {}
+//   let matchedAll = [...string.matchAll(/<div>/g)]
+//   let lastIndex = 0
 
-  let resultString = matchedAll.reduce((acc, cur, index) => {
-    // Store the end index of each <div> tag
-    divObj[`div${index + 1}`] = cur.index + cur[0].length
+//   let resultString = matchedAll.reduce((acc, cur, index) => {
+//     // Store the end index of each <div> tag
+//     divObj[`div${index + 1}`] = cur.index + cur[0].length
 
-    // Add the string part before the current <div>
-    acc += string.slice(lastIndex, cur.index)
+//     acc += string.slice(lastIndex, cur.index)
+//     // Add the string part before the current <div>
 
-    if (Object.entries(divObj).length % 2 === 0) {
-      // Replace the last <div> with </div>
-      acc += '</div>'
-      // Reset the divObj if it's even
-      divObj = {}
-    } else if (index > 0 && Object.entries(divObj).length % 2 !== 0) {
-      acc += acc.slice(cur.index, lastIndex) + cur[0] + '</div>'
-    } else {
-      // Add the current <div> tag to the result
-      acc += cur[0]
-    }
+//     if (Object.entries(divObj).length % 2 === 0) {
+//       // Replace the last <div> with </div>
+//       acc += '</div>'
+//       // Reset the divObj if it's even
+//       divObj = {}
+//     } else if (index > 0 && Object.entries(divObj).length % 2 !== 0) {
+//       acc += acc.slice(cur.index, lastIndex) + cur[0] + '</div>'
+//     } else {
+//       // Add the current <div> tag to the result
+//       acc += cur[0]
+//     }
 
-    // Update lastIndex to the end of the current <div> tag
-    lastIndex = cur.index + cur[0].length
+//     // Update lastIndex to the end of the current <div> tag
+//     lastIndex = cur.index + cur[0].length
 
-    return acc
-  }, '')
+//     return acc
+//   }, '')
 
-  // Add the remaining part of the string after the last <div> tag
-  resultString += string.slice(lastIndex)
+//   // Add the remaining part of the string after the last <div> tag
+//   resultString += string.slice(lastIndex)
 
-  return resultString
-}
+//   return resultString
+// }
 
-let testString = '<div><div>Ilhan is here<div>'
-console.log(closeDivTags(testString))
+// let testString = '<div><div>Ilhan is here<div>'
+// console.log(closeDivTags(testString))
 
 // 24. ----------------------------------------------------------------
